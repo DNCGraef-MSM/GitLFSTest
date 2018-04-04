@@ -1,0 +1,7 @@
+*.framework filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+./Carthage/Build/iOS/AppsFlyerTracker.framework/AppsFlyerTracker filter=lfs diff=lfs merge=lfs -text
+./Carthage/Build/iOS/WebImage.framework/WebImage filter=lfs diff=lfs merge=lfs -text
+./Carthage/Build/iOS/*.framework/* filter=lfs diff=lfs merge=lfs -text
+./Carthage/Build/iOS/"*".framework/"*" filter=lfs diff=lfs merge=lfs -text
+./Carthage/Build/iOS/*.framework/**/* filter=lfs diff=lfs merge=lfs -text
