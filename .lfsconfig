@@ -1,2 +1,2 @@
 [lfs]
-	url = https://artifactory3-eu1.moneysupermarket.com/artifactory/list/gitlfs-mobile
+url = "https://artifactory3-eu1.moneysupermarket.com/artifactory/api/lfs/gitlfs-mobile"
