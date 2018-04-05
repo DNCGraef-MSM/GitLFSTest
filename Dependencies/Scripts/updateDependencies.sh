@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# Update & fetch & build dependencies as dynamic libraries according to Cartfile spec
+# Helper script for resolving dependencies using Carthage, then pulling those dependencies
+# as zip files into "Dependencies" directory for commit to source control via Git LFS
+
+# How to update dependencies:
+# 	1. Update project dependencies in Cartfile in root directory as required
+# 	2. Run this script from the [root]/Dependencies/Scripts directory
+# 	3. Review and commit the zip files in [root]/Dependencies/Frameworks directory to source control
 
 # Constants
 FRAMEWORKS_DIR="./Dependencies/Frameworks"
@@ -10,7 +16,7 @@ CARTHAGE_BUILD_DIR="./Carthage/Build/iOS"
 cd ../../
 
 # Update dependencies
-# carthage update
+carthage update --platform ios
 
 # Move required frameworks into target directory
 cp -r "$CARTHAGE_BUILD_DIR"/*.framework "$FRAMEWORKS_DIR"
