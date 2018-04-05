@@ -1,6 +1,0 @@
-framework module ApptentiveDebugging {
-  umbrella header "ApptentiveDebugging.h"
-
-  export *
-  module * { export * }
-}

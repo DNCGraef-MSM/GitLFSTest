@@ -1,6 +1,0 @@
-framework module MarkdownParser {
-  umbrella header "MarkdownParser.h"
-
-  export *
-  module * { export * }
-}

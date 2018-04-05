@@ -1,6 +1,0 @@
-framework module OptimizelySDKDatafileManager {
-  umbrella header "OptimizelySDKDatafileManager.h"
-
-  export *
-  module * { export * }
-}
