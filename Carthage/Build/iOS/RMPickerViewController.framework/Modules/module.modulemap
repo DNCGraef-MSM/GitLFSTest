@@ -1,0 +1,6 @@
+framework module RMPickerViewController {
+  umbrella header "RMPickerViewController.h"
+
+  export *
+  module * { export * }
+}

@@ -1,2 +1,4 @@
-Carthage/*
-Dependencies/*.framework
+Carthage/Build/**/*.version
+Carthage/Build/**/*.bcsymbolmap
+Carthage/Build/**/*.dSYM
+Carthage/Checkouts/**/*
