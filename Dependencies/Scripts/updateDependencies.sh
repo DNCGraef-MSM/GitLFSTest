@@ -16,7 +16,7 @@ CARTHAGE_BUILD_DIR="./Carthage/Build/iOS"
 cd ../../
 
 # Update dependencies
-carthage update --platform ios
+# carthage update --platform ios
 
 # Move required frameworks into target directory
 cp -r "$CARTHAGE_BUILD_DIR"/*.framework "$FRAMEWORKS_DIR"
@@ -24,15 +24,17 @@ cp -r "$CARTHAGE_BUILD_DIR"/*.framework "$FRAMEWORKS_DIR"
 # Clean up any existing libs
 find "$FRAMEWORKS_DIR" -name '*.zip' -delete
 
+cd "$FRAMEWORKS_DIR"
+
 # Zip each framework for sync with source control (as binary)
-for framework in "$FRAMEWORKS_DIR"/*
+for framework in ./*
 do
-	# Name is last path segment, minus .framework extension
+# 	Name is last path segment, minus .framework extension
 	frameworkName=`echo "$framework" | rev | cut -d "/" -f1 | rev | cut -d "." -f1`
 	
-	# Zip up new libs
-	zip "$FRAMEWORKS_DIR"/"$frameworkName".zip "$framework"
+# 	Zip up new libs
+	zip -r ./"$frameworkName".zip "$framework"
 done
 
 # Remove non-zipped libs
-rm -rf "$FRAMEWORKS_DIR"/*.framework
+rm -rf ./*.framework
